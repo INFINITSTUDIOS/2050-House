@@ -70,7 +70,7 @@
       <div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px">
           <span class="tag" style="color:${cat.color}">${cat.label}</span>
-          ${ev.tentative ? '<span class="tag">Dates TBC</span>' : ""}
+          ${ev.tentative ? `<span class="tag">${U.esc(ev.status || "Dates TBC")}</span>` : ""}
           ${U.isPast(ev) ? '<span class="tag">Past</span>' : ""}
           ${ev.sponsorable && !U.isPast(ev) ? '<span class="tag green">Sponsorships open</span>' : ""}
         </div>
@@ -101,7 +101,7 @@
       ${video ? `<div class="player"><iframe src="${U.ytEmbed(ev.video)}" title="${esc(video.title)}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>` : ""}
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
         <span class="tag" style="color:${cat.color}">${cat.label}</span>
-        ${ev.tentative ? '<span class="tag">Dates TBC</span>' : ""}${past ? '<span class="tag">Past event</span>' : ""}
+        ${ev.tentative ? `<span class="tag">${U.esc(ev.status || "Dates TBC")}</span>` : ""}${past ? '<span class="tag">Past event</span>' : ""}
       </div>
       <h2 style="font-size:1.8rem">${esc(ev.title)}</h2>
       <div class="event-meta" style="margin-bottom:14px"><span>📅 ${U.fmtRange(ev)}</span>${ev.time ? `<span>🕒 ${esc(ev.time)}</span>` : ""}<span>📍 ${esc(ev.location)}</span></div>

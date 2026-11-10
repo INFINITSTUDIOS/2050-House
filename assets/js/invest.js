@@ -21,7 +21,7 @@
     return `<div class="card event-item reveal ${ev.tentative ? "tentative" : ""}">
       <div class="date-chip"><span class="m">${U.MONTHS[d.getMonth()]}</span><span class="d">${d.getDate()}</span></div>
       <div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px"><span class="tag" style="color:${cat.color}">${cat.label}</span>${ev.tentative ? '<span class="tag">Dates TBC</span>' : ""}</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px"><span class="tag" style="color:${cat.color}">${cat.label}</span>${ev.tentative ? `<span class="tag">${U.esc(ev.status || "Dates TBC")}</span>` : ""}</div>
         <h3 style="margin:0 0 4px">${esc(ev.title)}</h3>
         <div class="event-meta"><span>📅 ${U.fmtRange(ev)}</span><span>📍 ${esc(ev.location)}</span></div>
       </div>

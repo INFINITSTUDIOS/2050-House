@@ -91,7 +91,10 @@ window.FEEDIA = {
     forum:     { label: "Forum",        color: "#ff7a3d" },
     media:     { label: "Media / Press", color: "#3b82f6" },
     workshop:  { label: "Workshop",     color: "#10b981" },
-    virtual:   { label: "Virtual",      color: "#a855f7" }
+    virtual:   { label: "Virtual",      color: "#a855f7" },
+    summit:    { label: "Global Summit", color: "#0ea5e9" },
+    art:       { label: "Art & Culture", color: "#ec4899" },
+    motorsport:{ label: "Formula 1",    color: "#f59e0b" }
   },
   events: [
     { id: "sundance-2023", title: "2050 Forums @ Sundance 2023", category: "forum",
@@ -110,6 +113,15 @@ window.FEEDIA = {
       date: "2027-01-21", end: "2027-01-31", location: "Boulder, CO",
       description: "Our flagship festival house: panels, screenings, live performances and partner activations. Dates and venue to be confirmed.",
       price: 0 },
+    { id: "art-basel-2026", title: "2050 House @ Art Basel Miami Beach", category: "art", tentative: true, status: "Venue TBC", sponsorable: true,
+      date: "2026-12-04", end: "2026-12-06", location: "Miami Beach, FL",
+      description: "2050 House during Art Basel Miami Beach and Miami Art Week: artists, collectors, founders and brands at the crossroads of culture, technology and impact. Activation venue and programming to be announced." },
+    { id: "davos-2027", title: "2050 House @ Davos", category: "summit", tentative: true, status: "Venue TBC", sponsorable: true,
+      date: "2027-01-18", end: "2027-01-22", location: "Davos-Klosters, Switzerland",
+      description: "2050 House alongside the World Economic Forum Annual Meeting: conversations with leaders in business, climate, media and international development. Venue and programming to be announced." },
+    { id: "f1-miami-2027", title: "2050 House @ F1 Miami Grand Prix", category: "motorsport", tentative: true, status: "Venue TBC", sponsorable: true,
+      date: "2027-04-30", end: "2027-05-02", location: "Miami Gardens, FL",
+      description: "2050 House during the Formula 1 Miami Grand Prix race weekend: hospitality, partner activations and conversations on sport, technology and sustainability. Venue and programming to be announced." },
     { id: "gtm-workshop", title: "Go-To-Market Strategy Workshop", category: "workshop", tentative: true, sponsorable: true,
       date: "2026-12-10", time: "1:00 PM – 3:00 PM ET", location: "Online",
       description: "A working session on building a multichannel go-to-market plan: narrative, channels, influencers and launch sequencing." },
