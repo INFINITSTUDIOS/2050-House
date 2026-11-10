@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule a Free Consultation | Feedia</title>
+  <meta name="description" content="Schedule a free one-on-one consultation with a Feedia marketing and business development professional.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="consultation">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Free Consultation</span>
+        <h1>Schedule your <span class="grad-text">consultation</span></h1>
+        <p>Book a free one-on-one session with a Feedia marketing and business development professional for a full review of your company or project.</p>
+      </div>
+    </section>
+    <section class="section-sm">
+      <div class="container">
+        <div class="toolbar">
+          <div class="seg" role="tablist" aria-label="Meeting length" id="len">
+            <button role="tab" data-len="15" aria-selected="false">15 min</button>
+            <button role="tab" data-len="30" class="active" aria-selected="true">30 min</button>
+            <button role="tab" data-len="60" aria-selected="false">60 min</button>
+          </div>
+          <a class="btn btn-ghost btn-sm" id="open-cal" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+        <div class="calendly-inline-widget" id="cal" data-url=""></div>
+        <p class="muted" style="margin-top:16px">Prefer email? Write to <a class="link-arrow" href="mailto:info@thefeedia.com">info@thefeedia.com</a> or use the <a class="link-arrow" href="index.html#contact">contact form</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      const F = window.FEEDIA;
+      const cal = document.getElementById("cal"), open = document.getElementById("open-cal");
+      function load(len) {
+        const url = F.brand.calendly[len];
+        open.href = url.split("?")[0];
+        cal.innerHTML = `<iframe src="${url}&embed_type=Inline&embed_domain=${location.hostname || "localhost"}" title="Schedule a ${len} minute meeting" style="width:100%;height:100%;border:0"></iframe>`;
+        document.querySelectorAll("#len button").forEach(b => { const on = b.dataset.len === len; b.classList.toggle("active", on); b.setAttribute("aria-selected", on); });
+      }
+      document.querySelectorAll("#len button").forEach(b => b.addEventListener("click", () => load(b.dataset.len)));
+      load("30");
+    })();
+  </script>
+</body>
+</html>

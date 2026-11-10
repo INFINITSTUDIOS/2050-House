@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event Calendar | Feedia &amp; 2050 House</title>
+  <meta name="description" content="Upcoming and past Feedia and 2050 House events: forums, festival houses, workshops and livestreams.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="events">
+  <header id="site-header"></header>
+
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Event Calendar</span>
+        <h1>Feedia &amp; <span class="grad-text">2050 House</span> events</h1>
+        <p>Forums, festival houses, workshops and livestreams. Add events to your calendar, or sponsor one and earn affiliate rewards.</p>
+      </div>
+    </section>
+    <section class="section-sm">
+      <div class="container">
+        <div class="toolbar">
+          <div class="group">
+            <div class="seg" role="tablist" aria-label="View">
+              <button data-view="month" class="active" aria-selected="true">Month</button>
+              <button data-view="list" aria-selected="false">List</button>
+            </div>
+            <div class="seg" aria-label="Time">
+              <button data-when="upcoming" class="active">Upcoming</button>
+              <button data-when="past">Past</button>
+              <button data-when="all">All</button>
+            </div>
+          </div>
+          <div class="group" id="cat-filters"></div>
+        </div>
+
+        <div id="month-view" class="calendar">
+          <div class="cal-head">
+            <button class="icon-btn" id="prev" aria-label="Previous month">‹</button>
+            <h3 id="cal-title" aria-live="polite"></h3>
+            <div style="display:flex;gap:8px"><button class="btn btn-ghost btn-sm" id="today-btn">Today</button><button class="icon-btn" id="next" aria-label="Next month">›</button></div>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+        </div>
+
+        <div id="list-view" class="grid" hidden></div>
+
+        <div class="toolbar" style="margin-top:20px">
+          <p class="muted" style="margin:0">Times are local to the venue. Dates marked “TBC” are not yet confirmed.</p>
+          <button class="btn btn-ghost btn-sm" id="ics-all">⬇ Subscribe: download all upcoming (.ics)</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div><h2>Put your brand on our stages</h2><p style="margin:8px 0 0;opacity:.9">Sponsors earn affiliate rewards on every ticket sold through their link.</p></div>
+          <a class="btn btn-light" href="invest.html">Become a sponsor</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/events.js"></script>
+</body>
+</html>

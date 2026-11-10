@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Feedia | Digital Marketing for Consumer & B2B Business</title>
+  <meta name="description" content="Feedia is a marketing, PR, business development and growth agency for consumer and B2B brands.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="about">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">About Feedia</span>
+        <h1>Bleeding-edge strategy for <span class="grad-text">consumer &amp; B2B</span> brands.</h1>
+        <p>Feedia is a marketing, public relations, business development and growth agency, built to be the outsourced team behind ambitious companies.</p>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container about-split">
+        <img src="assets/img/about.jpg" alt="The Feedia team at work" class="reveal">
+        <div class="reveal">
+          <h2>40+ years of combined experience</h2>
+          <p class="muted">Feedia brings together more than four decades of experience delivering best-in-class marketing and business development. We plan, produce and measure, so strategy and execution never drift apart.</p>
+          <p class="muted">Our work spans go-to-market strategy, earned media, influencer and event campaigns, content production, social audio, digital assets and the metaverse.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+            <a class="btn btn-primary" href="consultation.html">Request a free consultation</a>
+            <a class="btn btn-ghost" href="services.html">Our services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Expertise</span>
+          <h2>Core sectors</h2>
+          <p class="muted">Deep subject-matter expertise where it matters most to our clients.</p>
+        </div>
+        <div class="grid grid-3" id="sectors"></div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">2050 House</span>
+          <h2>Powered by Feedia</h2>
+          <p class="muted">2050 House, founded by Feedia CEO Kwasi Amaning Asare, convenes filmmakers, founders and changemakers around the future of media, climate and impact, including the 2050 Forums at the Sundance Film Festival.</p>
+        </div>
+        <div class="grid grid-3" id="about-media"></div>
+        <div style="margin-top:24px"><a class="btn btn-ghost" href="media.html">Watch more in the media library</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center"><h2>Brands we've grown with</h2></div>
+        <div class="logo-wall" id="logo-wall"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      const F = window.FEEDIA, U = window.FeediaUI;
+      const icons = { "Technology": "💡", "Social Impact": "🌍", "Sports": "🏅", "International Development": "🤝", "Media": "🎥" };
+      const blurbs = {
+        "Technology": "Launches, platform growth and developer and user acquisition.",
+        "Social Impact": "Campaigns that move audiences and funding toward real change.",
+        "Sports": "Athlete, team and brand partnerships that build fandom.",
+        "International Development": "Cross-border programs, partnerships and public engagement.",
+        "Media": "Music, film, TV and creator brands, from content to distribution."
+      };
+      document.getElementById("sectors").innerHTML = F.sectors.map(s => `<div class="card lift reveal"><div class="card-icon">${icons[s]}</div><h3>${s}</h3><p class="muted" style="margin:0">${blurbs[s]}</p></div>`).join("");
+      const m = document.getElementById("about-media");
+      m.innerHTML = F.media.filter(x => x.featured).slice(0, 3).map(U.mediaCard).join("");
+      U.bindMediaCards(m);
+      document.getElementById("logo-wall").innerHTML = F.clients.map(c => `<div class="reveal"><img src="${c.logo}" alt="${c.name}" loading="lazy"></div>`).join("");
+      U.observeReveal();
+    })();
+  </script>
+</body>
+</html>

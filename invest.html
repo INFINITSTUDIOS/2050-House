@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invest &amp; Sponsor | Feedia Affiliate Rewards</title>
+  <meta name="description" content="Sponsor Feedia and 2050 House events and earn affiliate rewards on every ticket and sponsorship you refer.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="invest">
+  <header id="site-header"></header>
+
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Invest &amp; Sponsor</span>
+        <h1>Back the stage. <span class="grad-text">Share the upside.</span></h1>
+        <p>Sponsor Feedia and 2050 House events and get your own affiliate link. Earn rewards on every ticket and pass sold through it, plus a bonus for every new sponsor you bring in.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+          <a class="btn btn-primary" href="#apply">Apply to sponsor</a>
+          <a class="btn btn-ghost" href="#calculator">Estimate your rewards</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="grid grid-4 steps">
+          <div class="step reveal"><h3>Choose a tier</h3><p class="muted">Pick a package and the event(s) you want to support.</p></div>
+          <div class="step reveal"><h3>Get your link</h3><p class="muted">We issue a unique affiliate code and link once your sponsorship is confirmed.</p></div>
+          <div class="step reveal"><h3>Share it</h3><p class="muted">Promote the event to your customers, team and community.</p></div>
+          <div class="step reveal"><h3>Earn rewards</h3><p class="muted">Get a share of referred ticket revenue plus sponsor-referral bonuses, paid after each event.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tiers -->
+    <section class="section" id="tiers">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Sponsorship Tiers</span>
+          <h2>Visibility plus affiliate rewards</h2>
+          <p class="muted">Every tier includes a personal affiliate link. Higher tiers earn a bigger share.</p>
+        </div>
+        <div class="grid grid-3" id="tier-grid"></div>
+      </div>
+    </section>
+
+    <!-- Open events -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Open Opportunities</span><h2>Events accepting sponsors</h2></div>
+        <div class="grid" id="open-events"></div>
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" id="affiliate">Affiliate Rewards</span>
+          <h2>Estimate your rewards</h2>
+          <p class="muted">Adjust the sliders to see what your affiliate link could earn back on your sponsorship.</p>
+        </div>
+        <div class="card calc">
+          <div>
+            <div class="field">
+              <label for="calc-tier">Sponsorship tier</label>
+              <select class="select" id="calc-tier"></select>
+            </div>
+            <div class="field">
+              <label for="calc-tickets">Tickets / passes sold through your link</label>
+              <input type="range" id="calc-tickets" min="0" max="1000" step="10" value="150">
+              <div class="row"><span>0</span><strong id="out-tickets"></strong><span>1,000</span></div>
+            </div>
+            <div class="field">
+              <label for="calc-price">Average ticket price</label>
+              <input type="range" id="calc-price" min="10" max="500" step="5" value="75">
+              <div class="row"><span>$10</span><strong id="out-price"></strong><span>$500</span></div>
+            </div>
+            <div class="field">
+              <label for="calc-sponsors">New sponsors you refer</label>
+              <input type="range" id="calc-sponsors" min="0" max="10" step="1" value="1">
+              <div class="row"><span>0</span><strong id="out-sponsors"></strong><span>10</span></div>
+            </div>
+            <div class="field">
+              <label for="calc-sponsor-tier">Typical tier of referred sponsors</label>
+              <select class="select" id="calc-sponsor-tier"></select>
+            </div>
+          </div>
+          <div class="result-box" aria-live="polite">
+            <p class="muted" style="margin:0">Estimated rewards</p>
+            <div class="result-total grad-text" id="out-total">$0</div>
+            <div class="result-line"><span>Ticket revenue referred</span><strong id="out-rev"></strong></div>
+            <div class="result-line"><span>Ticket rewards (<span id="out-rate"></span>)</span><strong id="out-ticket-reward"></strong></div>
+            <div class="result-line"><span>Sponsor referral bonuses</span><strong id="out-bonus"></strong></div>
+            <div class="result-line"><span>Your sponsorship</span><strong id="out-cost"></strong></div>
+            <div class="result-line" style="border:0"><span>Sponsorship offset by rewards</span><strong id="out-offset"></strong></div>
+            <div style="height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden;margin-top:6px"><div id="out-bar" style="height:100%;width:0;background:var(--grad);transition:width .3s"></div></div>
+            <p class="muted" style="font-size:.8rem;margin:14px 0 0">Estimates only, not a guarantee of earnings. Final terms are set in your sponsorship agreement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Link generator -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="card grid grid-2" style="align-items:center;gap:32px">
+          <div>
+            <span class="eyebrow">Already a sponsor?</span>
+            <h2 style="font-size:1.8rem">Build your share links</h2>
+            <p class="muted">Enter the affiliate code from your sponsorship confirmation to make a trackable link for any page or event.</p>
+          </div>
+          <div>
+            <div class="form-grid">
+              <div class="field"><label for="ref-code">Your affiliate code</label><input class="input" id="ref-code" placeholder="e.g. ACME2050" maxlength="24" autocomplete="off"></div>
+              <div class="field"><label for="ref-target">Link to</label><select class="select" id="ref-target"></select></div>
+            </div>
+            <div class="ref-box"><input class="input" id="ref-out" readonly aria-label="Your affiliate link"><button class="btn btn-primary" id="ref-copy">Copy</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Program Terms</span><h2>Reward rates at a glance</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Tier</th><th>Investment</th><th>Ticket reward</th><th>Sponsor referral bonus</th><th>Payout</th></tr></thead>
+            <tbody id="terms-body"></tbody>
+          </table>
+        </div>
+        <div class="grid grid-2" style="margin-top:32px">
+          <details class="card"><summary><strong>How are referrals tracked?</strong></summary><p class="muted" style="margin:12px 0 0">Your link carries your code (<code>?ref=CODE</code>). When a visitor arrives through it, the code is remembered on their device and attached to their RSVP, ticket or sponsorship inquiry. Buyers can also enter your code by hand.</p></details>
+          <details class="card"><summary><strong>When are rewards paid?</strong></summary><p class="muted" style="margin:12px 0 0">Rewards are reconciled after each event closes and paid out within 30 days, with a report showing every referred sale.</p></details>
+          <details class="card"><summary><strong>Can I refer other sponsors?</strong></summary><p class="muted" style="margin:12px 0 0">Yes. When a company you refer signs a sponsorship, you get a one-time bonus as a percentage of their package value.</p></details>
+          <details class="card"><summary><strong>Is this an investment in Feedia?</strong></summary><p class="muted" style="margin:12px 0 0">No. Sponsorships buy event visibility and benefits, and affiliate rewards are performance-based. This is not an offer of equity or securities. For investment conversations, <a class="link-arrow" href="consultation.html">book a meeting</a>.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apply -->
+    <section class="section" id="apply" style="background:var(--bg-2)">
+      <div class="container contact-split">
+        <div>
+          <span class="eyebrow">Apply</span>
+          <h2>Become a sponsor</h2>
+          <p class="muted">Tell us about your brand and goals. We'll follow up with a tailored proposal, your affiliate code and next steps.</p>
+          <div class="card" style="margin-top:20px"><p class="muted" style="margin:0">Questions?</p><a href="mailto:info@thefeedia.com" style="font-weight:600">info@thefeedia.com</a></div>
+        </div>
+        <form class="card form-grid" id="sponsor-form" novalidate>
+          <div class="field"><label for="s-name">Name</label><input class="input" id="s-name" name="Name" required autocomplete="name"></div>
+          <div class="field"><label for="s-email">Email</label><input class="input" id="s-email" name="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="s-company">Company</label><input class="input" id="s-company" name="Company" required autocomplete="organization"></div>
+          <div class="field"><label for="s-phone">Phone</label><input class="input" id="s-phone" name="Phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="s-tier">Tier</label><select class="select" id="s-tier" name="Tier"></select></div>
+          <div class="field"><label for="s-event">Event</label><select class="select" id="s-event" name="Event"></select></div>
+          <div class="field full"><label for="s-ref">Referred by (affiliate code, optional)</label><input class="input" id="s-ref" name="Referral code" maxlength="24"></div>
+          <div class="field full"><label for="s-goals">Goals &amp; notes</label><textarea class="input" id="s-goals" name="Goals" rows="4"></textarea></div>
+          <label class="full" style="display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--muted)"><input type="checkbox" required name="Agreed to affiliate terms" value="yes" style="margin-top:4px"> I understand reward estimates are not guaranteed and final terms are set in the sponsorship agreement.</label>
+          <div class="full"><button class="btn btn-primary btn-block" type="submit">Submit application</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/invest.js"></script>
+</body>
+</html>
